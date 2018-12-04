@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+
+
+
+
+  <title></title>
+</head>
+
+<body>
+
+
+  <script>
+    var obj = {
+      className: 'name my menu menu my hoh menu'
+    };
+
+    function removeClass(obj, cls) {
+      let value = cls;
+      let find = obj.className.split(' ');
+      for (var i = find.length - 1; i >= 0; i--) {
+        if (find[i] === value) {
+          find.splice(i, 1);
+          const ret = find.join(" ")
+          obj.className = ret;
+        }
+
+      }
+
+
+
+
+
+
+    }
+    removeClass(obj, 'my');
+    console.log(obj.className);
+    removeClasss(obj, 'menu');
+    console.log(obj.className);
+
+
+  </script>
+</body>
+
+</html>

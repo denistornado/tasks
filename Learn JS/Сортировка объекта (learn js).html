@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+
+
+
+
+  <title></title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+    var vasya = { name: "Вася", age: 23 };
+    var masha = { name: "Маша", age: 18 };
+    var vovochka = { name: "Вовочка", age: 6 };
+
+    var people = [vasya, masha, vovochka];
+
+
+    function compareNumeric(a, b) {
+      if (a.age > b.age) return 1;
+      if (a.age < b.age) return -1;
+    }
+
+
+
+
+
+    people.sort(compareNumeric);
+    var str = JSON.stringify(people);
+    alert(people[0].age)
+    alert(str);
+
+  </script>
+</body>
+
+</html>

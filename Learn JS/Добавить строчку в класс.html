@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+
+
+
+
+  <title></title>
+</head>
+
+<body>
+
+
+  <script>
+    var obj = {
+      className: ''
+    };
+    function addClass(obj, cls) {
+      let value = cls;
+      let find = obj.className.split(' ');
+      if (find.indexOf(value) == -1) {
+        obj.className = obj.className + " " + value;
+        if (obj.className == '') {
+          obj.className = obj.className + value;
+        }
+      }
+      else {
+        alert("Уже Существует");
+      }
+    }
+    addClass(obj, 'menu');
+    console.log(obj.className);
+    (obj.className);
+    addClass(obj, 'open');
+    console.log(obj.className);
+    addClass(obj, 'me');
+    console.log(obj.className);
+    addClass(obj, 'memenu');
+    console.log(obj.className);
+    addClass(obj, 'mymenu');
+    console.log(obj.className);
+    alert(obj.className);
+  </script>
+</body>
+
+</html>

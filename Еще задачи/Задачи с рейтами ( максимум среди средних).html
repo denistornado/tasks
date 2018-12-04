@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+
+
+
+
+    <title></title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const user = [
+            { name: 'Vasya', age: 19, rate: 900 },
+            { name: 'Dima', age: 18, rate: 1000 },
+            { name: 'Sveta', age: 13, rate: 85 },
+            { name: 'Petya', age: 14, rate: 100 },
+            { name: 'Seryozha', age: 18, rate: 900 },
+            { name: 'Valera', age: 14, rate: 150 }
+        ];
+
+
+
+
+
+        function groups(user_orig) {
+            var user_groups = [],
+                ages = {},
+                i, j, cur;
+            for (i = 0, j = user_orig.length; i < j; i++) {
+                cur = user_orig[i];
+                if (!(cur.age in ages)) {
+                    ages[cur.age] = { age: cur.age, name: [], rate: [] };
+                    user_groups.push(ages[cur.age]);
+                }
+                ages[cur.age].name.push(cur.name);
+                ages[cur.age].rate.push(cur.rate);
+            }
+            return user_groups;
+        }
+        var end = groups(user);
+
+
+
+
+        var usermod = end.map(function (a) {
+            var i = 0;
+
+
+            var total = 0;
+            var length_of_current_array = a.rate.length;
+            while (a.rate.length > i) {
+                var loop = a.rate.pop();
+
+                total = +(total) + (+loop);
+
+
+            }
+            ++i
+            return { age: a.age, rate: (total) / (length_of_current_array) };
+        });
+        var str1 = JSON.stringify(usermod);
+        alert(str1);
+        var result = usermod.reduce(function (fisrt, current) {
+
+            if (fisrt.rate >= current.rate) {
+                return fisrt;
+            }
+            else { return current; }
+
+        });
+        var str2 = JSON.stringify(result);
+        alert(str2);
+    </script>
+</body>
+
+</html>
